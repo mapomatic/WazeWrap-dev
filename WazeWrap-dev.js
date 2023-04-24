@@ -30,7 +30,7 @@ var WazeWrap = {};
         pageWindow.WazeWrap = WazeWrap;
 
         if (sandboxed) window.WazeWrap = WazeWrap;
-        if (!wwAvailable) await $.getScript(WW_URL);
+        await $.getScript(WW_URL);
     }
     
     function bootstrap(tries = 1) {

@@ -2059,6 +2059,9 @@
             wazedevtoastr.confirm(message, scriptName, { confirmOK: okFunction, confirmCancel: cancelFunction, ConfirmOkButtonText: okBtnText, ConfirmCancelButtonText: cancelBtnText });
         }
 
+        this.test = function() {
+            console.log('it worked');
+        }
         this.ScriptUpdateManager = class ScriptUpdateMonitor {
             #lastVersionChecked = '0';
             #scriptName;
