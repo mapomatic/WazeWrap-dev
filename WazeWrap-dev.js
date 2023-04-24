@@ -19,18 +19,16 @@ var WazeWrap = {};
 (function() {
     'use strict';
     const MIN_VERSION = '2019.05.01.01';
-    const WW_URL = 'https://github.com/mapomatic/WazeWrap-dev/raw/master/WazeWrapLib.js'; //'https://cdn.staticaly.com/gh/WazeDev/WazeWrap/master/WazeWrapLib.js?env=dev';
+    const WW_URL = 'https://github.com/mapomatic/WazeWrap-dev/raw/master/WazeWrapLib-dev.js'; //'https://cdn.staticaly.com/gh/WazeDev/WazeWrap/master/WazeWrapLib.js?env=dev';
 
     async function init(){
         const sandboxed = typeof unsafeWindow !== 'undefined';
         const pageWindow = sandboxed ? unsafeWindow : window;
         const wwAvailable = pageWindow.WazeWrap && (!pageWindow.WazeWrap.Version || pageWindow.WazeWrap.Version > MIN_VERSION);
 
-        if (wwAvailable) {
-            WazeWrap = pageWindow.WazeWrap;
-        } else {
-            pageWindow.WazeWrap = WazeWrap;
-        }
+        // DEV VERSION: force using this copy of WazeWrap
+        pageWindow.WazeWrap = WazeWrap;
+
         if (sandboxed) window.WazeWrap = WazeWrap;
         if (!wwAvailable) await $.getScript(WW_URL);
     }
