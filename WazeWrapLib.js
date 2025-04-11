@@ -7,8 +7,10 @@
     'use strict';
 	let wwSettings;
 	let wEvents;
+    let testValue;
 
     function bootstrap(tries = 1) {
+        testValue = 'test';
         if (!location.href.match(/^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/))
             return;
 
