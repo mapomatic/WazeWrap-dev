@@ -7,19 +7,22 @@
     'use strict';
 	let wwSettings;
 	let wEvents;
+    let sdk;
 
     function bootstrap(tries = 1) {
-        if (!location.href.match(/^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/))
-            return;
+        window.SDK_INITIALIZED.then(() => {;
+            if (!location.href.match(/^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/))
+                return;
 
-        if (W && W.map &&
-            W.model && W.loginManager.user &&
-            $)
-            init();
-        else if (tries < 1000)
-            setTimeout(function () { bootstrap(++tries); }, 200);
-        else
-            console.log('WazeWrap failed to load');
+            if (W && W.map &&
+                W.model && W.loginManager.user &&
+                $)
+                init();
+            else if (tries < 1000)
+                setTimeout(function () { bootstrap(++tries); }, 200);
+            else
+                console.log('WazeWrap failed to load');
+        });
     }
 
     bootstrap();
@@ -29,7 +32,7 @@
         WazeWrap.Version = "2025.03.12.01";
         WazeWrap.isBetaEditor = /beta/.test(location.href);
 		
-	loadSettings();
+	    loadSettings();
 	    if(W.map.events)
 		    wEvents = W.map.events;
 	    else
@@ -43,7 +46,7 @@
         RestoreMissingSegmentFunctions();
         RestoreMissingNodeFunctions();
         RestoreMissingOLKMLSupport();
-	RestoreMissingWRule();
+	    RestoreMissingWRule();
 
         WazeWrap.Geometry = new Geometry();
         WazeWrap.Model = new Model();
@@ -662,9 +665,9 @@
             return this.getStateName(segObj.attributes.primaryStreetID);
         };
 	    
-	this.getObjectModel = function (obj){
-		return obj?.attributes?.wazeFeature?._wmeObject;
-	};
+        this.getObjectModel = function (obj){
+            return obj?.attributes?.wazeFeature?._wmeObject;
+        };
 
 		/**
 		 * Returns an array of segment IDs for all segments that make up the roundabout the given segment is part of
