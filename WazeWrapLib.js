@@ -10,7 +10,8 @@
     let sdk;
 
     function bootstrap(tries = 1) {
-        window.SDK_INITIALIZED.then(() => {;
+        window.SDK_INITIALIZED.then(() => {
+            debugger;
             if (!location.href.match(/^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/))
                 return;
 
