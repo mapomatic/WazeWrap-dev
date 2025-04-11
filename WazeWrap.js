@@ -20,7 +20,7 @@ var WazeWrap = {};
     'use strict';
     const MIN_VERSION = '2019.05.01.01';
     // const WW_URL = 'https://cdn.jsdelivr.net/gh/WazeDev/WazeWrap@latest/WazeWrapLib.js'; //'https://cdn.staticaly.com/gh/WazeDev/WazeWrap/master/WazeWrapLib.js?env=dev';
-    const WW_URL = 'https://wazedev.github.io/WazeWrap/WazeWrapLib.js';
+    const WW_URL = 'https://update.greasyfork.org/scripts/532551/WazeWrapLib%20dev.js';
 
     async function init(){
         const sandboxed = typeof unsafeWindow !== 'undefined';
