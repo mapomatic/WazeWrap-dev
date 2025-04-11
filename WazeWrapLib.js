@@ -1,3 +1,12 @@
+// ==UserScript==
+// @name         WazeWrapLib
+// @namespace    WazeDev
+// @version      2025.04.11.000
+// @description  WazeWrap library file
+// @author       MapOMatic, WazeDev group
+// @include      /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/
+// ==/UserScript==
+
 /* global W */
 /* global WazeWrap */
 /* jshint esversion:6 */
