@@ -1,12 +1,3 @@
-// ==UserScript==
-// @name         WazeWrapLib
-// @namespace    WazeDev
-// @version      2025.04.11.002
-// @description  WazeWrap library file
-// @author       MapOMatic, WazeDev group
-// @include      /^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/
-// ==/UserScript==
-
 /* global W */
 /* global WazeWrap */
 /* jshint esversion:6 */
@@ -18,7 +9,6 @@
 	let wEvents;
 
     function bootstrap(tries = 1) {
-        alert('test');
         if (!location.href.match(/^https:\/\/(www|beta)\.waze\.com\/(?!user\/)(.{2,6}\/)?editor\/?.*$/))
             return;
 
