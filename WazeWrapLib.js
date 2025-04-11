@@ -57,7 +57,7 @@
 	    WazeWrap.Remote = new Remote();
 
         WazeWrap.getSelectedFeatures = function () {
-			let arr = W.selectionManager.getSelectedWmeFeatures();
+			let arr = W.selectionManager.getSelectedWMEFeatures();
 			//inject functions for pulling information since WME backend is receiving frequent changes
 			arr.forEach((item, index, array) => { 
 				array[index].WW = {};
