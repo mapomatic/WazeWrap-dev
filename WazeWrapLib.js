@@ -1,6 +1,5 @@
 /* global W */
 /* global WazeWrap */
-/* global & */
 /* jshint esversion:6 */
 /* eslint-disable */
 
